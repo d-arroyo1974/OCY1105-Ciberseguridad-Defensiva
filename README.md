@@ -1,7 +1,7 @@
 # OCY1105-Ciberseguridad-Defensiva
 Repositorio oficial de laboratorios en Google Colab y actividades formativas para OCY1105 - Ciberseguridad Defensiva (Duoc UC).
 # 🛡️ Ciberseguridad Defensiva (OCY1105)
-**Repositorio Oficial de Laboratorios y Cuadernos Interactivos en Google Colab** **Docente:** [Tu Nombre y Apellidos] | **Institución:** Duoc UC | Escuela de Informática y Telecomunicaciones  
+**Repositorio Oficial de Laboratorios y Cuadernos Interactivos en Google Colab** **Docente:** Dennis Arroyo Marin | **Institución:** Duoc UC | Escuela de Informática y Telecomunicaciones  
 
 ---
 
