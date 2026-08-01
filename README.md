@@ -1,4 +1,4 @@
-# 🛡️ Ciberseguridad Defensiva (OCY1105 / CSY3122)
+# 🛡️ Ciberseguridad Defensiva (OCY1105)
 **Repositorio Oficial de Laboratorios y Cuadernos Interactivos en Google Colab** **Docente:** Dennis Arroyo Marín | **Institución:** Duoc UC  
 
 ---
@@ -18,8 +18,8 @@
 
 | N° Guía | Actividad / Temática | Enlace Directo a Google Colab |
 | :---: | :--- | :---: |
-| **S5** | **Preservación de Evidencia Digital y Cadena de Custodia** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S5_Preservacion_y_cadena_de_custodia.ipynb) |
-| **S6** | **Análisis Forense y Erradicación de Incidentes** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S6_Analisis_forense_e_incidentes.ipynb) |
+| **S5** | **Preservación de Evidencia Digital y Cadena de Custodia** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S5_Preservaci%C3%B3n_de_Evidencia_Digital_y_Cadena_de_Custodia.ipynb) |
+| **S6** | **Análisis Forense e Incidentes** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S6_An%C3%A1lisis_Forense_e_Incidentes.ipynb) |
 
 ---
 
@@ -27,14 +27,15 @@
 
 | N° Guía | Actividad / Temática | Enlace Directo a Google Colab |
 | :---: | :--- | :---: |
-| **S7** | **Análisis de Registros de Auditoría (Logs) e IoCs** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S7_Analisis_de_logs_e_IoCs.ipynb) |
-| **S8** | **Threat Hunting Proactivo y Reglas de Detección en SIEM/EDR** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S8_Threat_hunting_y_reglas_de_deteccion.ipynb) |
+| **S7** | **Análisis de Logs e IoCs** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S7_An%C3%A1lisis_de_Logs_e_IoCs.ipynb) |
+| **S8** | **Threat Hunting y Detección Proactiva** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S8_Threat_Hunting_y_Detecci%C3%B3n_Proactiva.ipynb) |
 
 ---
 
-## 📝 Instrucciones de Uso para Estudiantes
+## 📝 Instrucciones para Estudiantes
 
-1. Haz clic en el botón **"Open in Colab"** de la actividad que corresponda a la semana de clases.
-2. Una vez abierto en Google Colab, ve al menú superior: `Archivo` > `Guardar una copia en Drive`.
-3. Desarrolla las actividades interactivas indicadas por el docente.
-4. **IMPORTANTE:** Presiona el botón **Play (▶️)** de cada celda de respuestas para guardar la información antes de ejecutar la celda final consolidada.
+1. Selecciona la actividad correspondiente a la semana de clases y haz clic en el botón **"Open in Colab"**.
+2. Al abrirse Google Colab, crea tu copia personal guardándola en tu espacio: `Archivo` > `Guardar una copia en Drive`.
+3. Lee el caso práctico y completa las respuestas en los campos del formulario.
+4. **IMPORTANTE:** Presiona el botón **Play (▶️)** de cada celda de respuestas para registrar la información en la memoria de Python.
+5. Ejecuta la celda final para verificar el resumen de tus respuestas antes de exportar o presentar tu informe final.
