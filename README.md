@@ -1,4 +1,4 @@
-# 🛡️ Ciberseguridad Defensiva (OCY1105 / CSY3122)
+# 🛡️ Ciberseguridad Defensiva (OCY1105)
 **Repositorio Oficial de Laboratorios y Cuadernos Interactivos en Google Colab** **Docente:** Dennis Arroyo Marín | **Institución:** Duoc UC  
 
 ---
