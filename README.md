@@ -8,7 +8,7 @@
 | N° Guía | Actividad / Temática | Enlace Directo a Google Colab |
 | :---: | :--- | :---: |
 | **S1** | **Componentes Claves de la Ciberseguridad Defensiva** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S1_Componentes_clave_de_la_ciberseguridad_defensiva.ipynb) |
-| **S2** | **Las Tecnologías, Procesos y Roles de un SOC** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S2_Las_tecnolog%C3%ADas_procesos_y_roles_de_un_SOC.ipynb) |
+| **S2** | **Las Tecnologías, Procesos y Roles de un SOC** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S2_Las_tecnolog%C3%ADas%2C_procesos_y_roles_de_un_SOC.ipynb) |
 | **S3** | **Identificación y Priorización de Riesgos y Amenazas** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S3_Identificaci%C3%B3n_y_priorizaci%C3%B3n_de_riesgos_y_amenazas.ipynb) |
 | **S4** | **Creación de Políticas y Playbook** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-arroyo1974/OCY1105-Ciberseguridad-Defensiva/blob/main/Act_S4_Creaci%C3%B3n_de_pol%C3%ADticas_y_playbook.ipynb) |
 
