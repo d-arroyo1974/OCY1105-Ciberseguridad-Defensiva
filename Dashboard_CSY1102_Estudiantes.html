@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSY1102 · Operaciones de Ciberseguridad (CyberOps) — Cronograma Interactivo</title>
+<style>
+  :root{
+    --dark:#0B1220;
+    --header-strip:#13233B;
+    --accent:#4E7CDD;
+    --accent2:#E97132;
+    --text-on-dark:#FFFFFF;
+    --text-main:#1B2733;
+    --text-secondary:#5B6B82;
+    --card-bg:#F4F6FB;
+    --border:#DCE3EE;
+    --teacher-bg:#FFF6EF;
+    --teacher-border:#F3C9A8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Calibri,'Segoe UI',Roboto,Arial,sans-serif;
+    background:#EEF1F7;
+    color:var(--text-main);
+  }
+  header.top{
+    background:var(--dark);
+    color:var(--text-on-dark);
+    padding:28px 24px 24px;
+  }
+  .top-inner{
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .kicker{
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  h1{
+    font-family:Cambria,Georgia,'Times New Roman',serif;
+    font-weight:700;
+    font-size:26px;
+    margin:0 0 4px;
+  }
+  .subtitle{
+    color:#C6D1E8;
+    font-size:14px;
+    margin:0;
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:20px 24px 60px;
+  }
+
+  /* Week tabs */
+  .weektabs{
+    display:flex;
+    gap:8px;
+    margin:22px 0 20px;
+    flex-wrap:wrap;
+  }
+  .weektab{
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--text-secondary);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .weektab:hover{ border-color:var(--accent); color:var(--accent); }
+  .weektab.active{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+  }
+
+  .datebar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--text-secondary);
+    font-size:13px;
+    margin-bottom:18px;
+  }
+  .datebar .pill{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:4px 10px;
+    font-weight:600;
+    color:var(--text-main);
+  }
+
+  /* header strip for content block */
+  .content-strip{
+    background:var(--header-strip);
+    color:#fff;
+    padding:18px 22px;
+    border-radius:10px 10px 0 0;
+  }
+  .content-strip .kicker{ color:var(--accent); margin-bottom:4px; }
+  .content-strip h2{
+    font-family:Cambria,Georgia,serif;
+    font-size:22px;
+    margin:0;
+    font-weight:700;
+  }
+
+  .panel{
+    background:#fff;
+    border:1px solid var(--border);
+    border-top:none;
+    border-radius:0 0 10px 10px;
+    padding:22px;
+    margin-bottom:24px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:6px;
+  }
+  @media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .card h3{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    color:var(--accent);
+    margin:0 0 10px;
+    font-weight:700;
+  }
+  .card ul{ margin:0; padding-left:18px; }
+  .card li{ margin-bottom:6px; font-size:14.5px; line-height:1.45; }
+  .card p{ font-size:14.5px; line-height:1.5; margin:0 0 8px; }
+
+  .badge{
+    display:inline-block;
+    background:var(--accent2);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    padding:3px 9px;
+    border-radius:5px;
+    margin-bottom:6px;
+  }
+
+  .topics-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
+  }
+  .topic-chip{
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--text-main);
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:999px;
+  }
+
+  footer{
+    text-align:center;
+    color:var(--text-secondary);
+    font-size:12px;
+    padding:20px 0 30px;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="kicker">CSY1102 · Duoc UC</div>
+    <h1>Operaciones de Ciberseguridad (CyberOps) — Cronograma Interactivo</h1>
+    <p class="subtitle">Docente: Dennis E. Arroyo M. · Cronograma completo: Semanas 1–18</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="weektabs" id="weekTabs"></div>
+  <div class="datebar" id="dateBar"></div>
+
+  <div class="content-strip">
+    <div class="kicker" id="stripKicker">Semana</div>
+    <h2 id="stripTitle">—</h2>
+  </div>
+  <div class="panel">
+    <div class="grid">
+      <div class="card">
+        <h3>Contenidos</h3>
+        <p id="contenidoText"></p>
+      </div>
+      <div class="card">
+        <h3>Actividades / Experiencias</h3>
+        <ul id="actividadesList"></ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h3>Módulo a evaluar</h3>
+      <p id="moduloText"></p>
+    </div>
+    <div style="margin-top:16px;">
+      <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin:0 0 10px;font-weight:700;">Temas clave de la semana</h3>
+      <div class="topics-row" id="topicsRow"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Panel generado a partir del Cronograma CSY1102 · Uso interno docente y para estudiantes.</footer>
+
+<script>
+const weeks = [
+  {
+    n: 1,
+    dateStart: "10-08-2026",
+    dateEnd: "15-08-2026",
+    contenido: "Gestión de activos corporativos.",
+    actividades: [
+      "Gestionando activos con GLPI",
+      "Tutorial de instalación y uso de GLPI"
+    ],
+    modulo: "EA1 Gestión de vulnerabilidades en activos tecnológicos",
+    topics: [
+      "Gestión de activos tecnológicos",
+      "Herramientas para la gestión de activos (GLPI)",
+      "Buenas prácticas para una gestión de activos eficaz",
+      "CIS Controls v8.1: Control 1 (inventario de hardware) y Control 2 (inventario de software)",
+      "Descubrimiento continuo de dispositivos",
+      "Relación con marcos y estándares internacionales"
+    ],
+    recap: null,
+    recapList: [],
+    bridge: "Es la primera semana del curso: no hay contenidos previos que activar. Se sugiere iniciar indagando qué entienden los estudiantes por 'activo tecnológico' y por qué una organización necesita saber qué hardware y software tiene antes de poder protegerlo, para conectar con la motivación del curso.",
+    lmsIntro: "¡Bienvenidos a Operaciones de Ciberseguridad (CyberOps)! Esta semana partimos con la Gestión de Activos Corporativos: por qué es el primer paso de toda estrategia de seguridad, cómo se relaciona con los CIS Controls 1 y 2 (inventario de hardware y software), y cómo usar GLPI para gestionar activos tecnológicos de forma centralizada."
+  },
+  {
+    n: 2,
+    dateStart: "17-08-2026",
+    dateEnd: "22-08-2026",
+    contenido: "Detección de vulnerabilidades.",
+    actividades: [
+      "Plantilla de informe de vulnerabilidades",
+      "Tutorial de instalación y uso de OpenVas"
+    ],
+    modulo: "Continúa acumulando para: EA1 Gestión de vulnerabilidades en activos tecnológicos",
+    topics: [
+      "Introducción a las vulnerabilidades",
+      "Técnicas y herramientas para la detección de vulnerabilidades",
+      "Técnicas no automatizadas de detección",
+      "Escaneo de vulnerabilidades con OpenVAS",
+      "Clasificación de severidad con CVSS",
+      "Recomendaciones y buenas prácticas para resolver vulnerabilidades"
+    ],
+    recap: "En la Semana 1 vimos la gestión de activos corporativos:",
+    recapList: [
+      "La importancia de inventariar hardware y software antes de protegerlo.",
+      "Los CIS Controls 1 y 2 como fundamento de una estrategia de seguridad.",
+      "El uso de GLPI para gestionar activos tecnológicos."
+    ],
+    bridge: "La semana pasada aprendimos a inventariar los activos; esta semana damos el siguiente paso lógico: una vez que sabemos qué activos tenemos, necesitamos saber qué tan expuestos están. Veremos cómo detectar vulnerabilidades de forma automatizada con OpenVAS y cómo clasificarlas según su criticidad (CVSS).",
+    lmsIntro: "La semana pasada aprendimos a inventariar activos tecnológicos con GLPI. Esta semana damos el siguiente paso: la Detección de Vulnerabilidades. Veremos técnicas automatizadas y no automatizadas, instalaremos y usaremos OpenVAS para escanear una VM Linux, y aprenderemos a clasificar la severidad de cada hallazgo con CVSS."
+  },
+  {
+    n: 3,
+    dateStart: "24-08-2026",
+    dateEnd: "29-08-2026",
+    contenido: "Remediación de las vulnerabilidades.",
+    actividades: [
+      "Implementando acciones de remediación de las debilidades detectadas",
+      "CIS Microsoft Windows 11 Stand-alone Benchmark"
+    ],
+    modulo: "Continúa acumulando para: EA1 Gestión de vulnerabilidades en activos tecnológicos",
+    topics: [
+      "Evaluación de la criticidad de las vulnerabilidades",
+      "Estrategias de remediación más comunes",
+      "Priorización de la remediación según impacto y explotabilidad",
+      "CIS Benchmarks: hardening de sistemas operativos",
+      "Aplicación práctica: CIS Benchmark para Windows 11"
+    ],
+    recap: "En la Semana 2 detectamos vulnerabilidades:",
+    recapList: [
+      "El uso de OpenVAS para escanear una VM Linux.",
+      "La clasificación de severidad con CVSS.",
+      "Las técnicas automatizadas y no automatizadas de detección."
+    ],
+    bridge: "La semana pasada detectamos y clasificamos vulnerabilidades; esta semana cerramos el ciclo remediándolas: cómo priorizar qué corregir primero, qué estrategias de remediación existen y cómo aplicar un CIS Benchmark (hardening) para reducir la superficie de ataque de un sistema. Con esto llegamos a la Semana 4 de preparación y la Evaluación EA1 en la Semana 5.",
+    lmsIntro: "La semana pasada detectamos vulnerabilidades con OpenVAS. Esta semana cerramos el ciclo con la Remediación: cómo evaluar la criticidad, priorizar qué corregir primero, y aplicar un CIS Benchmark de hardening (usaremos el de Windows 11) para reducir el riesgo de los activos identificados."
+  },
+  {
+    n: 4,
+    dateStart: "31-08-2026",
+    dateEnd: "05-09-2026",
+    contenido: "Preparación Evaluación EA1.",
+    actividades: [
+      "Repaso: Gestionando activos con GLPI",
+      "Repaso: Informe de vulnerabilidades",
+      "Repaso: Remediación de las debilidades detectadas"
+    ],
+    modulo: "Cierre de módulo — EA1 Gestión de vulnerabilidades en activos tecnológicos (previo a Evaluación EA1, Semana 5)",
+    topics: [
+      "Repaso: inventario de activos con GLPI",
+      "Repaso: escaneo de vulnerabilidades con OpenVAS",
+      "Repaso: informe de vulnerabilidades y CVSS",
+      "Repaso: remediación y CIS Benchmarks",
+      "Resolución de dudas y simulacro de evaluación"
+    ],
+    recap: "En las Semanas 1 a 3 vimos el ciclo completo de gestión de vulnerabilidades:",
+    recapList: [
+      "Gestión de activos corporativos con GLPI y los CIS Controls 1 y 2.",
+      "Detección de vulnerabilidades con OpenVAS y clasificación CVSS.",
+      "Remediación de vulnerabilidades y hardening con CIS Benchmarks."
+    ],
+    bridge: "Con el ciclo completo ya visto (inventario → detección → remediación), esta semana la dedicamos a repasar de forma integrada y resolver dudas antes de la Evaluación EA1 de la próxima semana: instalación de VMs (OpenVAS y Linux vulnerable), ejecución del escaneo, investigación de 5 vulnerabilidades y entrega del informe.",
+    lmsIntro: "Esta semana repasamos de forma integrada todo lo visto en las Semanas 1 a 3: gestión de activos con GLPI, detección de vulnerabilidades con OpenVAS y su remediación con CIS Benchmarks. Aprovechemos la clase para resolver dudas y dejar listo el entorno de trabajo (VMs de OpenVAS y Linux vulnerable) antes de la Evaluación EA1 de la Semana 5."
+  },
+  {
+    n: 5,
+    dateStart: "07-09-2026",
+    dateEnd: "12-09-2026",
+    contenido: "Evaluación EA1.",
+    actividades: [
+      "Evaluación Formativa_EA1"
+    ],
+    modulo: "Cierre evaluado: EA1 Gestión de vulnerabilidades en activos tecnológicos (30%)",
+    topics: [
+      "Instalación y configuración de OpenVAS (VM o contenedor)",
+      "Instalación de VM Linux vulnerable (Metasploitable2)",
+      "Inventario de hardware y software de ambas VMs",
+      "Ejecución de análisis de vulnerabilidades con OpenVAS",
+      "Investigación de 5 vulnerabilidades críticas (CVE, CVSS, remediación)",
+      "Entrega de informe según plantilla",
+      "Evaluación individual, práctica, 5 horas pedagógicas"
+    ],
+    recap: "En las Semanas 1 a 4 construimos el ciclo completo de EA1:",
+    recapList: [
+      "Gestión de activos corporativos con GLPI y CIS Controls.",
+      "Detección de vulnerabilidades con OpenVAS y CVSS.",
+      "Remediación de vulnerabilidades y CIS Benchmarks."
+    ],
+    bridge: "Esta semana se evalúa toda la EA1 con la Evaluación Formativa EA1 (30% de la nota, 5 horas pedagógicas, individual, en Taller de Alto Cómputo): instalar OpenVAS y una VM Linux vulnerable, ejecutar el análisis de vulnerabilidades, investigar 5 vulnerabilidades críticas y entregar el informe con el inventario de activos.",
+    lmsIntro: "Esta semana rendimos la Evaluación Formativa EA1, que integra todo lo visto en las Semanas 1 a 4: gestión de activos, detección y remediación de vulnerabilidades. Es una evaluación práctica e individual de 5 horas pedagógicas (30% de la nota) en el Taller de Alto Cómputo: deberán instalar OpenVAS y una VM Linux vulnerable, ejecutar el escaneo, investigar 5 vulnerabilidades críticas y entregar el informe correspondiente."
+  },
+  {
+    n: 6,
+    dateStart: "14-09-2026",
+    dateEnd: "19-09-2026",
+    contenido: "Análisis de protocolos de red usando herramientas de interfaz gráfica.",
+    actividades: [
+      "Captura y análisis de tráfico con Wireshark y NetworkMiner",
+      "Filtros comunes y Cheat Sheet de Wireshark"
+    ],
+    modulo: "EA2 Captura y análisis de tráfico de red y de archivos de registro",
+    topics: [
+      "Introducción a Wireshark",
+      "Aplicando filtros en Wireshark",
+      "Exportando objetos capturados",
+      "Uso de NetworkMiner",
+      "Captura y análisis de tráfico de red"
+    ],
+    recap: "En la Semana 5 se evaluó la EA1 completa (EA1): gestión de activos, detección y remediación de vulnerabilidades.",
+    recapList: [],
+    bridge: "Con la EA1 cerrada, iniciamos la EA2: Captura y Análisis de Tráfico de Red y de Archivos de Registro. Partimos por la herramienta más usada para inspeccionar tráfico visualmente: Wireshark, junto con NetworkMiner para reconstruir archivos y objetos desde una captura.",
+    lmsIntro: "La semana pasada rindieron la Evaluación EA1, cerrando la primera experiencia de aprendizaje. Esta semana damos inicio a la EA2: Captura y Análisis de Tráfico de Red y de Archivos de Registro. Comenzamos con herramientas de interfaz gráfica: Wireshark (filtros, exportación de objetos) y NetworkMiner."
+  },
+  {
+    n: 7,
+    dateStart: "21-09-2026",
+    dateEnd: "26-09-2026",
+    contenido: "Análisis de protocolos de red usando herramientas en línea de comandos.",
+    actividades: [
+      "Captura y análisis de tráfico con tcpdump y tshark",
+      "Filtros comunes y Cheat Sheet de tcpdump y tshark"
+    ],
+    modulo: "Continúa acumulando para: EA2 Captura y análisis de tráfico de red y de archivos de registro",
+    topics: [
+      "Uso de tcpdump: captura y filtros",
+      "Uso de tshark: captura y análisis",
+      "Filtros de captura vs. filtros de visualización",
+      "Análisis de tráfico sin interfaz gráfica (acceso remoto)"
+    ],
+    recap: "En la Semana 6 vimos el análisis de tráfico con herramientas gráficas:",
+    recapList: [
+      "El uso de Wireshark: filtros y exportación de objetos.",
+      "El uso de NetworkMiner para reconstruir archivos desde una captura."
+    ],
+    bridge: "La semana pasada analizamos tráfico con interfaz gráfica; esta semana hacemos lo mismo pero desde la línea de comandos, imprescindible cuando se trabaja en un servidor remoto sin GUI: tcpdump y tshark, con sus filtros y sintaxis equivalentes a los de Wireshark.",
+    lmsIntro: "La semana pasada capturamos y analizamos tráfico con Wireshark y NetworkMiner. Esta semana hacemos lo mismo desde la línea de comandos: tcpdump y tshark, herramientas esenciales cuando no se dispone de interfaz gráfica, por ejemplo al trabajar en un servidor remoto."
+  },
+  {
+    n: 8,
+    dateStart: "28-09-2026",
+    dateEnd: "03-10-2026",
+    contenido: "La importancia de los archivos de log.",
+    actividades: [
+      "Analizando registros con herramientas nativas de Linux",
+      "Cheat Sheet de grep, awk y expresiones regulares"
+    ],
+    modulo: "Continúa acumulando para: EA2 Captura y análisis de tráfico de red y de archivos de registro",
+    topics: [
+      "¿Qué son los archivos de log?",
+      "Visualizando archivos de log",
+      "Otros archivos de log interesantes",
+      "Rotación de logs",
+      "Análisis con grep, awk y expresiones regulares"
+    ],
+    recap: "En la Semana 7 analizamos tráfico desde la línea de comandos:",
+    recapList: [
+      "El uso de tcpdump para capturar y filtrar tráfico.",
+      "El uso de tshark para analizar capturas desde CLI."
+    ],
+    bridge: "La semana pasada capturamos tráfico en tiempo real; esta semana miramos el registro histórico que dejan los sistemas: los archivos de log. Aprenderemos qué son, cómo se rotan y cómo analizarlos con herramientas nativas de Linux (grep, awk, expresiones regulares) para encontrar evidencia de un incidente.",
+    lmsIntro: "La semana pasada capturamos tráfico con tcpdump y tshark. Esta semana miramos el registro histórico de los sistemas: los archivos de log. Veremos qué son, cómo se rotan, y cómo analizarlos con herramientas nativas de Linux como grep, awk y expresiones regulares."
+  },
+  {
+    n: 9,
+    dateStart: "05-10-2026",
+    dateEnd: "10-10-2026",
+    contenido: "Análisis de tráfico para la detección de amenazas.",
+    actividades: [
+      "Forense de red con Zeek",
+      "Guía de uso y Cheat Sheet de Zeek"
+    ],
+    modulo: "Continúa acumulando para: EA2 Captura y análisis de tráfico de red y de archivos de registro",
+    topics: [
+      "Introducción a Zeek (Bro)",
+      "Analizando tráfico con Zeek",
+      "Threat Hunting de red",
+      "Detección de anomalías en protocolos de red"
+    ],
+    recap: "En la Semana 8 vimos el análisis de archivos de log:",
+    recapList: [
+      "Qué son los archivos de log y su rotación.",
+      "El análisis con herramientas nativas de Linux: grep, awk, expresiones regulares."
+    ],
+    bridge: "La semana pasada analizamos logs de sistema; esta semana subimos un nivel de profundidad en el análisis de red con Zeek, una herramienta de forense de red orientada a Threat Hunting que va más allá de la captura de paquetes. Con esto cerramos el contenido de la EA2, antes de la Evaluación EA2 en la Semana 10.",
+    lmsIntro: "La semana pasada analizamos archivos de log con herramientas nativas de Linux. Esta semana cerramos los contenidos de la EA2 con Zeek: una herramienta de forense de red orientada al Threat Hunting, que permite detectar anomalías y amenazas en el tráfico de forma mucho más profunda que una captura simple. Recuerden que en la Semana 10 tendremos la Evaluación Formativa EA2, que integra toda la EA2."
+  },
+  {
+    n: 10,
+    dateStart: "12-10-2026",
+    dateEnd: "17-10-2026",
+    contenido: "Evaluación EA2.",
+    actividades: [
+      "Evaluación Formativa_EA2"
+    ],
+    modulo: "Cierre evaluado: EA2 Captura y análisis de tráfico de red y de archivos de registro (35%)",
+    topics: [
+      "Instalación y uso de NetworkMiner",
+      "Captura y análisis de tráfico con Wireshark",
+      "Captura y análisis de tráfico con tcpdump",
+      "Captura y análisis de tráfico con tshark",
+      "Instalación y análisis de tráfico con Zeek",
+      "Análisis de logs con herramientas de línea de comandos Linux",
+      "Evaluación individual, práctica, 5 horas"
+    ],
+    recap: "En las Semanas 6 a 9 desarrollamos la EA2 completa:",
+    recapList: [
+      "Análisis de tráfico con herramientas gráficas: Wireshark y NetworkMiner.",
+      "Análisis de tráfico con herramientas CLI: tcpdump y tshark.",
+      "Análisis de archivos de log con herramientas nativas de Linux.",
+      "Forense de red y Threat Hunting con Zeek."
+    ],
+    bridge: "Esta semana se evalúa toda la EA2 con la Evaluación Formativa EA2 (35% de la nota, 5 horas, individual): captura y análisis con NetworkMiner y Wireshark, análisis con tcpdump y tshark, análisis con Zeek, y análisis de logs por línea de comandos, entregando un informe con la evidencia recopilada.",
+    lmsIntro: "Esta semana rendimos la Evaluación Formativa EA2, que integra todo lo visto en las Semanas 6 a 9: análisis de tráfico con Wireshark/NetworkMiner, con tcpdump/tshark, con Zeek, y análisis de logs con herramientas de línea de comandos. Es una evaluación práctica e individual de 5 horas (35% de la nota)."
+  },
+  {
+    n: 11,
+    dateStart: "19-10-2026",
+    dateEnd: "24-10-2026",
+    contenido: "Controles para proteger los activos contra ataques de acceso y a la confidencialidad.",
+    actividades: [
+      "Implementación de firewall de filtrado y criptografía",
+      "Guía y Cheat Sheet de nftables y OpenSSL"
+    ],
+    modulo: "EA3 Aplicación de controles preventivos y detectivos",
+    topics: [
+      "Controles preventivos de seguridad",
+      "Configuración y filtrado de paquetes con nftables en Linux",
+      "Sistemas de control de autenticación",
+      "Criptografía: cifrado, llaves y firma digital",
+      "OpenSSL: generación de llaves y verificación de firma"
+    ],
+    recap: "En la Semana 10 se evaluó la EA2 completa (EA2): captura y análisis de tráfico y de archivos de registro.",
+    recapList: [],
+    bridge: "Con la EA2 cerrada, comenzamos la EA3: Aplicación de Controles Preventivos y Detectivos. Partimos por los controles de acceso y confidencialidad: filtrado de paquetes con nftables y criptografía con OpenSSL, las dos primeras líneas de defensa antes de pasar a controles más avanzados como honeypots, SIEM e IDS.",
+    lmsIntro: "La semana pasada rindieron la Evaluación EA2, cerrando la segunda experiencia de aprendizaje. Esta semana damos inicio a la EA3: Aplicación de Controles Preventivos y Detectivos. Comenzamos con controles de acceso y confidencialidad: filtrado de paquetes con nftables y criptografía (llaves, cifrado y firma digital) con OpenSSL."
+  },
+  {
+    n: 12,
+    dateStart: "26-10-2026",
+    dateEnd: "31-10-2026",
+    contenido: "Análisis del comportamiento de los atacantes usando un honeypot.",
+    actividades: [
+      "Implementación de un honeypot en cloud",
+      "Guía de instalación de un honeypot"
+    ],
+    modulo: "Continúa acumulando para: EA3 Aplicación de controles preventivos y detectivos",
+    topics: [
+      "Introducción a los honeypots",
+      "Implementación de un honeypot en cloud",
+      "Análisis de datos recopilados por el honeypot",
+      "Inteligencia de ciberamenazas a partir de interacciones con atacantes"
+    ],
+    recap: "En la Semana 11 vimos controles preventivos de acceso:",
+    recapList: [
+      "El filtrado de paquetes con nftables en Linux.",
+      "La criptografía y el uso de OpenSSL para llaves y firma digital."
+    ],
+    bridge: "La semana pasada implementamos controles preventivos que bloquean el acceso no autorizado; esta semana damos vuelta la perspectiva con un control detectivo: un honeypot que atrae y registra el comportamiento de los atacantes, generando inteligencia de amenazas real a partir de sus interacciones.",
+    lmsIntro: "La semana pasada implementamos controles preventivos (firewall con nftables y criptografía con OpenSSL). Esta semana pasamos a un control detectivo: implementaremos un honeypot en cloud y analizaremos los datos recopilados para entender el comportamiento real de los atacantes."
+  },
+  {
+    n: 13,
+    dateStart: "02-11-2026",
+    dateEnd: "07-11-2026",
+    contenido: "Plataformas de gestión de eventos e información de seguridad.",
+    actividades: [
+      "Implementación de un SIEM Wazuh en cloud y enrolamiento de agentes",
+      "Guía de instalación de un SIEM en cloud"
+    ],
+    modulo: "Continúa acumulando para: EA3 Aplicación de controles preventivos y detectivos",
+    topics: [
+      "Los SIEM: herramientas clave en los SOC",
+      "Comparación de plataformas SIEM populares",
+      "Implementación de un SIEM en la nube con Wazuh",
+      "Arquitectura de Wazuh (indexador, servidor, dashboard, agentes)",
+      "Enrolamiento de agentes y creación de casos de alerta"
+    ],
+    recap: "En la Semana 12 implementamos un honeypot:",
+    recapList: [
+      "La implementación de un honeypot en cloud.",
+      "El análisis de los datos recopilados como inteligencia de amenazas."
+    ],
+    bridge: "La semana pasada generamos inteligencia con un honeypot; esta semana centralizamos toda esa información —junto con los logs y alertas de los demás controles— en un SIEM. Implementaremos Wazuh en la nube y enrolaremos agentes para visualizar alertas en tiempo real, como lo haría un analista SOC de Nivel 1.",
+    lmsIntro: "La semana pasada implementamos un honeypot para generar inteligencia de amenazas. Esta semana centralizamos la visibilidad de seguridad con un SIEM: qué es, cómo se compara con otras plataformas, y cómo implementar Wazuh en la nube, enrolando agentes y creando casos de alerta para el análisis de un SOC."
+  },
+  {
+    n: 14,
+    dateStart: "09-11-2026",
+    dateEnd: "14-11-2026",
+    contenido: "Los sistemas de detección y prevención de intrusos.",
+    actividades: [
+      "Implementación de un IDS basado en Suricata y su integración al SIEM",
+      "Guía de instalación y configuración de Suricata"
+    ],
+    modulo: "Continúa acumulando para: EA3 Aplicación de controles preventivos y detectivos",
+    topics: [
+      "Conceptos básicos de detección de intrusiones (IDS/IPS)",
+      "Asociación con roles en un SOC",
+      "Implementación práctica de Suricata",
+      "Integración de Suricata con Wazuh (SIEM)",
+      "Instalación de la sonda IDS en instancia EC2"
+    ],
+    recap: "En la Semana 13 implementamos el SIEM:",
+    recapList: [
+      "Qué es un SIEM y su rol en el SOC.",
+      "La implementación de Wazuh en la nube y el enrolamiento de agentes."
+    ],
+    bridge: "La semana pasada implementamos el SIEM como centro de correlación; esta semana le damos ojos en la red con un IDS: instalaremos Suricata como sonda y lo integraremos al SIEM (Wazuh), cerrando el ciclo de controles preventivos y detectivos de la EA3, antes de la Evaluación EA3 en la Semana 16.",
+    lmsIntro: "La semana pasada implementamos el SIEM (Wazuh). Esta semana cerramos los contenidos de la EA3 con Sistemas de Detección y Prevención de Intrusos: instalaremos y configuraremos Suricata como sonda IDS y la integraremos al SIEM, comprobando que las alertas de red lleguen correctamente. Recuerden que en la Semana 16 tendremos la Evaluación Formativa EA3, que integra toda la EA3."
+  },
+  {
+    n: 15,
+    dateStart: "16-11-2026",
+    dateEnd: "21-11-2026",
+    contenido: "Preparación Evaluación EA3.",
+    actividades: [
+      "Repaso: Implementación de un IDS basado en Suricata y su integración al SIEM",
+      "Repaso: Implementación de firewall de filtrado y criptografía",
+      "Repaso: Implementación de un SIEM Wazuh en cloud",
+      "Repaso: Implementación de un honeypot en cloud"
+    ],
+    modulo: "Cierre de módulo — EA3 Aplicación de controles preventivos y detectivos (previo a Evaluación EA3, Semana 16)",
+    topics: [
+      "Repaso: controles preventivos (nftables, OpenSSL)",
+      "Repaso: honeypot en cloud y análisis de datos",
+      "Repaso: SIEM Wazuh y enrolamiento de agentes",
+      "Repaso: IDS Suricata e integración al SIEM",
+      "Resolución de dudas y simulacro de evaluación"
+    ],
+    recap: "En las Semanas 11 a 14 desarrollamos la EA3 completa:",
+    recapList: [
+      "Controles preventivos: filtrado con nftables y criptografía con OpenSSL.",
+      "Honeypot en cloud y análisis de datos de atacantes.",
+      "SIEM Wazuh en la nube y enrolamiento de agentes.",
+      "IDS Suricata y su integración al SIEM."
+    ],
+    bridge: "Con los cuatro controles de la EA3 ya vistos (firewall/criptografía, honeypot, SIEM e IDS), esta semana la dedicamos a repasar de forma integrada y resolver dudas antes de la Evaluación EA3 de la próxima semana.",
+    lmsIntro: "Esta semana repasamos de forma integrada todo lo visto en las Semanas 11 a 14: controles preventivos (firewall y criptografía), el honeypot, el SIEM Wazuh y el IDS Suricata integrado al SIEM. Aprovechemos la clase para resolver dudas y dejar los entornos cloud listos antes de la Evaluación EA3 de la Semana 16."
+  },
+  {
+    n: 16,
+    dateStart: "23-11-2026",
+    dateEnd: "28-11-2026",
+    contenido: "Evaluación EA3.",
+    actividades: [
+      "Evaluación Formativa_EA3"
+    ],
+    modulo: "Cierre evaluado: EA3 Aplicación de controles preventivos y detectivos (35%)",
+    topics: [
+      "Configuración de VM Linux con interfaz Red NAT y solo-anfitrión",
+      "Cifrado de información confidencial y verificación de firma (OpenSSL)",
+      "Configuración y validación de reglas de filtrado de paquetes",
+      "Implementación de honeypot en cloud y análisis de datos capturados",
+      "Implementación de SIEM Wazuh y enrolamiento de agente Windows Server",
+      "Instalación de sonda IDS Suricata en EC2 e integración al SIEM",
+      "Evaluación individual, práctica, 5 horas"
+    ],
+    recap: "En las Semanas 11 a 15 desarrollamos la EA3 completa:",
+    recapList: [
+      "Controles preventivos: nftables y criptografía con OpenSSL.",
+      "Honeypot en cloud y análisis de datos de atacantes.",
+      "SIEM Wazuh y enrolamiento de agentes.",
+      "IDS Suricata integrado al SIEM."
+    ],
+    bridge: "Esta semana se evalúa toda la EA3 con la Evaluación Formativa EA3 (35% de la nota, 5 horas, individual): controles de acceso y criptografía, filtrado de paquetes, honeypot en cloud, SIEM Wazuh con un agente Windows Server, y una sonda IDS Suricata integrada al SIEM.",
+    lmsIntro: "Esta semana rendimos la Evaluación Formativa EA3, que integra todo lo visto en las Semanas 11 a 15: controles preventivos, honeypot, SIEM e IDS. Es una evaluación práctica e individual de 5 horas (35% de la nota, la de mayor peso junto a EA2), con desafíos de criptografía, filtrado de paquetes, honeypot, SIEM Wazuh e IDS Suricata."
+  },
+  {
+    n: 17,
+    dateStart: "30-11-2026",
+    dateEnd: "05-12-2026",
+    contenido: "EXAMEN.",
+    actividades: [
+      "Examen Transversal"
+    ],
+    modulo: "Examen",
+    topics: [
+      "Examen Transversal",
+      "Integra EA1 (Gestión de vulnerabilidades), EA2 (Tráfico y logs) y EA3 (Controles preventivos y detectivos)"
+    ],
+    recap: "En las Semanas 1 a 16 completamos las tres experiencias de aprendizaje del curso, cada una cerrada con su evaluación formativa (EA1, EA2 y EA3).",
+    recapList: [
+      "EA1 — Gestión de vulnerabilidades en activos tecnológicos (Semanas 1-4, EA1 · 30%).",
+      "EA2 — Captura y análisis de tráfico de red y de archivos de registro (Semanas 6-9, EA2 · 35%).",
+      "EA3 — Aplicación de controles preventivos y detectivos (Semanas 11-15, EA3 · 35%)."
+    ],
+    bridge: "Con las tres experiencias de aprendizaje evaluadas, esta semana se rinde el Examen Transversal, que integra los contenidos de todo el curso: gestión y remediación de vulnerabilidades, captura y análisis de tráfico/logs, y controles preventivos y detectivos (firewall, criptografía, honeypot, SIEM, IDS).",
+    lmsIntro: "Esta semana rendimos el Examen Transversal de la asignatura, que integra las tres experiencias de aprendizaje del curso. Les recomiendo repasar sus informes de las evaluaciones EA1, EA2 y EA3, ya que son un excelente resumen de los contenidos que se evaluarán. ¡Mucho éxito!"
+  },
+  {
+    n: 18,
+    dateStart: "07-12-2026",
+    dateEnd: "12-12-2026",
+    contenido: "Sin contenidos programados en el cronograma.",
+    actividades: [],
+    modulo: "—",
+    topics: [],
+    recap: null,
+    recapList: [],
+    bridge: "Semana de cierre de semestre; el cronograma oficial no registra contenidos ni actividades para esta semana.",
+    lmsIntro: "Llegamos al cierre del semestre. Esta semana no tiene contenidos ni actividades programadas en el cronograma; es un buen momento para resolver dudas finales, revisar retroalimentación pendiente o conversar sobre próximos pasos en sus trayectorias de ciberseguridad."
+  }
+];
+
+let currentWeek = 1;
+
+function fmtDate(d){ return d; }
+
+function buildTabs(){
+  const tabWrap = document.getElementById('weekTabs');
+  tabWrap.innerHTML = '';
+  weeks.forEach(w => {
+    const btn = document.createElement('button');
+    btn.className = 'weektab' + (w.n === currentWeek ? ' active' : '');
+    btn.textContent = 'Semana ' + w.n;
+    btn.onclick = () => { currentWeek = w.n; render(); };
+    tabWrap.appendChild(btn);
+  });
+}
+
+function render(){
+  buildTabs();
+  const w = weeks.find(x => x.n === currentWeek);
+
+  document.getElementById('dateBar').innerHTML =
+    '<span class="pill">Semana ' + w.n + '</span> Del ' + w.dateStart + ' al ' + w.dateEnd;
+
+  document.getElementById('stripKicker').textContent = 'Semana ' + w.n + ' · CSY1102';
+  document.getElementById('stripTitle').textContent = w.contenido;
+
+  document.getElementById('contenidoText').textContent = w.contenido;
+
+  const actList = document.getElementById('actividadesList');
+  actList.innerHTML = '';
+  w.actividades.forEach(a => {
+    const li = document.createElement('li');
+    li.textContent = a;
+    actList.appendChild(li);
+  });
+
+  document.getElementById('moduloText').textContent = w.modulo;
+
+  const topicsRow = document.getElementById('topicsRow');
+  topicsRow.innerHTML = '';
+  w.topics.forEach(t => {
+    const chip = document.createElement('span');
+    chip.className = 'topic-chip';
+    chip.textContent = t;
+    topicsRow.appendChild(chip);
+  });
+
+}
+
+render();
+</script>
+
+</body>
+</html>
